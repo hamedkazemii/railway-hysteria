@@ -1,12 +1,11 @@
 #!/bin/bash
-
 set -e
 
-# ایجاد کلید TLS
+# ساخت گواهینامه TLS
 openssl req -x509 -newkey rsa:2048 -nodes -keyout key.pem -out cert.pem -days 365 \
   -subj "/C=US/ST=State/L=City/O=Org/CN=localhost"
 
-# ساخت کانفیگ Hysteria
+# ساخت فایل کانفیگ
 cat <<CONFIG > config.json
 {
   "listen": ":443",
@@ -24,8 +23,9 @@ cat <<CONFIG > config.json
 }
 CONFIG
 
-# دانلود Hysteria
-curl -L -o hysteria.tar.gz https://github.com/apernet/hysteria/releases/latest/download/hysteria-linux-amd64.tar.gz
-tar -xzf hysteria.tar.gz
+# دانلود باینری Hysteria
+curl -L -o hysteria https://github.com/apernet/hysteria/releases/latest/download/hysteria-linux-amd64
 chmod +x hysteria
+
+# اجرای سرور Hysteria
 ./hysteria server --config config.json
