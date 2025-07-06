@@ -1,8 +1,13 @@
-FROM alpine
+FROM debian:bullseye
 
-RUN apk add --no-cache bash curl openssl
+RUN apt-get update && apt-get install -y \
+    curl openssl ca-certificates && \
+    apt-get clean
 
 COPY main.sh /app/main.sh
-RUN chmod +x /app/main.sh
+COPY railway.json /app/railway.json
+
+WORKDIR /app
+RUN chmod +x main.sh
 
 CMD ["/app/main.sh"]
