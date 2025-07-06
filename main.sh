@@ -15,7 +15,7 @@ cat <<CONFIG > config.json
   },
   "auth": {
     "type": "password",
-    "password": "your-password"
+    "password": "8899781H@med"
   }
 }
 CONFIG
