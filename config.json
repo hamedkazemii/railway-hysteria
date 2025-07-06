@@ -1,0 +1,15 @@
+{
+  "listen": ":443",
+  "tls": {
+    "cert": "cert.pem",
+    "key": "key.pem"
+  },
+  "auth": {
+    "type": "password",
+    "password": "8899781H@med"
+  },
+  "obfs": {
+    "type": "salamander",
+    "password": "8899781H@med"
+  }
+}
