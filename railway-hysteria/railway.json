@@ -1,8 +1,0 @@
-{
-  "build": {
-    "env": {
-      "PORT": "443"
-    }
-  },
-  "start": "bash main.sh"
-}
