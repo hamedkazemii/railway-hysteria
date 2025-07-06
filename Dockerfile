@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add --no-cache bash curl
+RUN apk add --no-cache bash curl openssl
 
 COPY main.sh /app/main.sh
 RUN chmod +x /app/main.sh
