@@ -10,4 +10,4 @@ COPY railway.json /app/railway.json
 WORKDIR /app
 RUN chmod +x main.sh
 
-CMD ["/app/main.sh"]
+CMD ["./main.sh"]
